@@ -1,0 +1,196 @@
+stratum_id,treatment_type,treatment,count,total_studies,percentage
+male,category,other,14,23,60.86956521739131
+male,category,ACT,7,23,30.434782608695656
+male,category,psychotherapy,2,23,8.695652173913043
+male,name,/Treatments:**,2,23,8.695652173913043
+male,name,/Treatments**: Overexpression of miR-532-5p is highlighted as a therapeutic intervention that alleviates depression-like behaviors. This is achieved by suppressing inflammation (cytokine levels and NOS expression) and inhibiting STAT3 activation.,1,23,4.3478260869565215
+male,name,"resistant depression (TRD), which is a subset characterized by lack of response to conventional treatments.",1,23,4.3478260869565215
+male,name,/Treatments**:,2,23,8.695652173913043
+male,name,"**: The study identifies ""interventions"" as one of the themes but does not explicitly detail specific treatments or strategies in the abstract.",1,23,4.3478260869565215
+male,name,"/Treatments**: Melatonin (administered daily for fourteen days at doses of 0, 0.5, 1, 2.5, 5, and 10 mg/kg).",1,23,4.3478260869565215
+male,name,or Treatments:**,3,23,13.043478260869565
+male,name,or Treatments**: No interventions or treatment methods are mentioned in the abstract.,1,23,4.3478260869565215
+male,name,/Treatments:** No interventions or treatments are described in the abstract.,1,23,4.3478260869565215
+male,name,/Treatments:** Two sessions of psilocybin therapy (20 mg/70 kg and 30 mg/70 kg doses) combined with approximately 11 hours of supportive psychotherapy.,1,23,4.3478260869565215
+male,name,"**: Baicalin (BA), a flavonoid glycoside from *Scutellaria baicalensis Georgi*, is studied as a treatment for depression. It alleviates depressive-like behaviors by targeting the SIRT1/PARP1 signaling pathway.",1,23,4.3478260869565215
+male,name,or Treatments**:,2,23,8.695652173913043
+male,name,"** Auriculotherapy (ear acupoint therapy) was performed for 4 minutes in the experimental group, while the control group received sham auricular acupressure.",1,23,4.3478260869565215
+male,name,"resistant depression* (TRD), which implies that the population studied had depression that did not respond to conventional treatments.",1,23,4.3478260869565215
+male,name,"in the trials, implying these conditions are the primary focus of the study.",1,23,4.3478260869565215
+male,name,/Treatments**: No specific interventions or treatments were described in this study.,1,23,4.3478260869565215
+male,name,/Treatments**: No specific interventions or treatments were mentioned in the abstract.,1,23,4.3478260869565215
+male,name,"/Treatments**: Resilience is highlighted as a coping factor that mitigates depression, anxiety, and stress, improving mental health.",1,23,4.3478260869565215
+general_population,category,other,41,47,87.2340425531915
+general_population,category,ACT,5,47,10.638297872340425
+general_population,category,psychotherapy,2,47,4.25531914893617
+general_population,name,or Treatments:**,4,47,8.51063829787234
+general_population,name,**: Coping management is suggested as a beneficial intervention for mitigating mental health problems.,1,47,2.127659574468085
+general_population,name,or Treatments**:,9,47,19.148936170212767
+general_population,name,** No specific interventions or treatments are mentioned in the abstract.,1,47,2.127659574468085
+general_population,name,/Treatments**:,1,47,2.127659574468085
+general_population,name,mentioned**: Recommendation to use short anxiety screening tools to monitor and triage PLHIV as part of HIV care services.,1,47,2.127659574468085
+general_population,name,"/Treatments**: Suggested interventions include healthcare professionals providing better patient preparation, regular progress reviews, psychological support during the withdrawal process, and open communication throughout. Updated clinical guidelines with evidence-based recommendations are also called for.",1,47,2.127659574468085
+general_population,name,"No specific treatments or interventions were mentioned, but it was implied that the mental health of nurses should be evaluated in the long term.",1,47,2.127659574468085
+general_population,name,"/Treatments Mentioned:** No specific interventions or treatments are mentioned, but the study emphasizes the need for special attention toward the mental health of healthcare workers.",1,47,2.127659574468085
+general_population,name,". It identifies low interest (both general and sexual) as critical components of low positive affect, alongside depressed mood (high negative affect).",1,47,2.127659574468085
+general_population,name,"Smoking cessation interventions tailored to PLWH are recommended, including addressing depression and substance use.",1,47,2.127659574468085
+general_population,name,"or Treatments:** Statins (alone or in addition to antidepressants) were evaluated for their efficacy, acceptability, tolerability, and safety as a treatment option for major depressive disorder. The study emphasizes the addition of statins to antidepressant therapy, particularly lipophilic statins like simvastatin.",1,47,2.127659574468085
+general_population,name,or treatments:**,5,47,10.638297872340425
+general_population,name,/Treatments Mentioned:** None explicitly discussed,1,47,2.127659574468085
+general_population,name,the abstract focuses on correlates rather than therapeutic approaches.,1,47,2.127659574468085
+general_population,name,refractory depression (TRD) and explored whether **age** influences the speed and durability of antidepressant responses to ketamine.,1,47,2.127659574468085
+general_population,name,/Treatments:** The Occupational Depression Inventory (ODI) is introduced as an instrument to assess depressive symptoms related specifically to work.,1,47,2.127659574468085
+general_population,name,Mentioned**:,1,47,2.127659574468085
+general_population,name,"or Treatments:** A stepwise approach to psychological well-being is recommended, including:",1,47,2.127659574468085
+general_population,name,"or Treatments**: Proposed interventions include resilience training, professional development programs, improved infrastructure at government medical colleges, competitive salaries, supportive working environments, and prioritizing physician mental health.",1,47,2.127659574468085
+general_population,name,"Psilocybin and psilocybin-assisted therapies for mental disorders, particularly depression, are explored.",1,47,2.127659574468085
+general_population,name,or Treatments Mentioned:**,2,47,4.25531914893617
+general_population,name,**: Overexpression of Connexin 43 (CX43) in astrocytes was tested as a therapeutic intervention via adeno-associated virus inoculation.,1,47,2.127659574468085
+general_population,name,/Treatments:**,3,47,6.382978723404255
+general_population,name,/Treatments Mentioned**:,1,47,2.127659574468085
+general_population,name,/Treatments:** The interventions studied were:,1,47,2.127659574468085
+general_population,name,or treatments:** The study suggests investigating interventions aimed at reducing both depression and death anxiety to improve quality of life.,1,47,2.127659574468085
+general_population,name,A user-centered habit-formation intervention designed to improve antiretroviral therapy (ART) adherence.,1,47,2.127659574468085
+general_population,name,"/Treatments**: The review highlights terpenoids (e.g., α-pinene, β-caryophyllene, limonene, β-linalool, etc.) as potential therapeutic agents. These compounds exhibit neuroprotective, anti-inflammatory, antibacterial, antioxidant effects, and regulate neurotransmitters—mechanisms linked to antidepressant and anxiolytic properties.",1,47,2.127659574468085
+general_population,name,"/Treatments Mentioned**: No specific interventions or treatments were mentioned in the abstract, but the study calls for practitioners to support concerned populations.",1,47,2.127659574468085
+adolescents,category,other,12,14,85.71428571428571
+adolescents,category,medication,1,14,7.142857142857142
+adolescents,category,ACT,1,14,7.142857142857142
+adolescents,name,/Treatments Mentioned:**,1,14,7.142857142857142
+adolescents,name,/treatments**: No interventions or treatments were discussed.,1,14,7.142857142857142
+adolescents,name,"Mentioned:** Psychotropic medications are discussed, including:",1,14,7.142857142857142
+adolescents,name,or treatments**:,2,14,14.285714285714285
+adolescents,name,/Treatments**:,2,14,14.285714285714285
+adolescents,name,or Treatments Mentioned**:,1,14,7.142857142857142
+adolescents,name,"resistive behaviors, parental vicarious procedural anxiety, younger age, and frequency of distressing medical procedures.",1,14,7.142857142857142
+adolescents,name,or Treatments**:,3,14,21.428571428571427
+adolescents,name,/Treatments**: The abstract does not mention any specific interventions or treatments.,1,14,7.142857142857142
+adolescents,name,or Treatments**: No specific interventions or treatments are mentioned.,1,14,7.142857142857142
+perinatal_female,category,other,6,9,66.66666666666666
+perinatal_female,category,ACT,2,9,22.22222222222222
+perinatal_female,category,psychotherapy,2,9,22.22222222222222
+perinatal_female,name,**Five-element music interventions** based on Chinese Traditional Music.,1,9,11.11111111111111
+perinatal_female,name,"/Treatments Mentioned**: There are no specific interventions or treatments mentioned in the abstract, though the conclusions suggest the importance of reducing the prevalence of untreated PMADs.",1,9,11.11111111111111
+perinatal_female,name,or Treatments Discussed**:,1,9,11.11111111111111
+perinatal_female,name,"Lady Health Workers (LHWs) and Lady Health Visitors (LHVs) play a critical role in providing health education, encouraging women to seek treatment, and ensuring follow-up for postpartum depression.",1,9,11.11111111111111
+perinatal_female,name,/Treatments**: Telepsychiatry services were studied as an intervention for mental healthcare during the COVID-19 pandemic.,1,9,11.11111111111111
+perinatal_female,name,/Screening Tool:**,1,9,11.11111111111111
+perinatal_female,name,/Treatments**: Music therapy was applied during Nonstress Test procedures for the intervention group.,1,9,11.11111111111111
+perinatal_female,name,**: No specific interventions or treatments are mentioned in this abstract,1,9,11.11111111111111
+perinatal_female,name,it primarily models experimental maternal stress and examines its effects.,1,9,11.11111111111111
+perinatal_female,name,"/Treatments**: The intervention was the inhalation of lavender essential oil as aromatherapy, compared to a placebo group receiving inhaled distilled water.",1,9,11.11111111111111
+older_adults,category,other,8,10,80.0
+older_adults,category,ACT,2,10,20.0
+older_adults,name,or Treatments:**,1,10,10.0
+older_adults,name,/Treatments**: The abstract mentions a cancer-specific geriatric assessment (CARE) but does not discuss direct interventions for anxiety specifically.,1,10,10.0
+older_adults,name,or Treatments Mentioned:**,1,10,10.0
+older_adults,name,or Treatments**:,2,10,20.0
+older_adults,name,/Treatments**:,1,10,10.0
+older_adults,name,"/Treatments**: No direct interventions are mentioned, but strengthening family support systems through financial and emotional support from adult children is highlighted as a potential means of improving mental health.",1,10,10.0
+older_adults,name,"Non-pharmacological interventions (including deep breathing and progressive muscle relaxation) were studied, alongside guided relaxation interventions delivered by General Practice Nurses (GPNs).",1,10,10.0
+older_adults,name,or Treatments Mentioned**:,1,10,10.0
+older_adults,name,/Treatments:**,1,10,10.0
+adults,category,other,17,21,80.95238095238095
+adults,category,ACT,4,21,19.047619047619047
+adults,name,"The study tested the effects of *Coriandrum sativum* extract (CSE) at varying doses (25, 50, or 100 mg/kg) and compared its anxiolytic effects to clonazepam, a conventional anti-anxiety medication.",1,21,4.761904761904762
+adults,name,or Treatments:**,2,21,9.523809523809524
+adults,name,or Treatments**:,1,21,4.761904761904762
+adults,name,or Treatments:** The study suggests the importance of addressing solitary drinking and shame in interventions but does not test or propose specific interventions.,1,21,4.761904761904762
+adults,name,or compliance.,1,21,4.761904761904762
+adults,name,/Treatment Mentioned:**,1,21,4.761904761904762
+adults,name,/Treatments**:,2,21,9.523809523809524
+adults,name,or Treatments Mentioned:**,2,21,9.523809523809524
+adults,name,**: No interventions or treatments are mentioned in the abstract.,1,21,4.761904761904762
+adults,name,/Treatments:,1,21,4.761904761904762
+adults,name,/Treatments:**,1,21,4.761904761904762
+adults,name,or treatments mentioned**:,1,21,4.761904761904762
+adults,name,or treatments**:,1,21,4.761904761904762
+adults,name,resistant depression (TRD)**. No specific causes or external triggers for TRD are discussed.,1,21,4.761904761904762
+adults,name,"/Treatments:** No specific interventions or treatments are mentioned, but it is suggested that orthodontists address these interconnected factors in treatment planning to improve outcomes.",1,21,4.761904761904762
+adults,name,or Treatments**: Current treatment guidelines for AIBDs focus mainly on managing disease flares and immunosuppression but do not address psychosocial consequences. Mental health support is suggested as a needed intervention.,1,21,4.761904761904762
+adults,name,The abstract highlights the need for culturally tailored smoking cessation interventions that address stressors like discrimination but does not describe specific interventions implemented in the study.,1,21,4.761904761904762
+adults,name,", regardless of intervention group.",1,21,4.761904761904762
+adolescents_school,category,other,2,3,66.66666666666666
+adolescents_school,category,ACT,1,3,33.33333333333333
+adolescents_school,name,/Treatments Mentioned:** Promoting positive youth development and improving family functioning were highlighted as promising strategies to prevent or reduce depressive symptoms.,1,3,33.33333333333333
+adolescents_school,name,", and socio-demographic variables are identified risk factors for suicidal phenomena (NSSI, suicidal ideation [SI], and suicide attempts [SA]).",1,3,33.33333333333333
+adolescents_school,name,or treatments mentioned**:,1,3,33.33333333333333
+cardiovascular,category,other,2,3,66.66666666666666
+cardiovascular,category,CBT,1,3,33.33333333333333
+cardiovascular,name,/Treatments:**,1,3,33.33333333333333
+cardiovascular,name,"/Treatments:** Six interventions were identified: antidepressant medications, collaborative care, psychotherapy (primarily cognitive behavioral therapy, CBT), exercise, education, and other nonpharmacological approaches.",1,3,33.33333333333333
+cardiovascular,name,or Treatments**:,1,3,33.33333333333333
+adults_female,category,other,3,4,75.0
+adults_female,category,medication,1,4,25.0
+adults_female,name,"No specific interventions were examined or mentioned, but the study suggests the importance of understanding emotional and cognitive effects in order to develop coping measures.",1,4,25.0
+adults_female,name,/Treatments**:,1,4,25.0
+adults_female,name,/Treatments:** The study tested a computerized affective control training program called AffeCT against a placebo training.,1,4,25.0
+adults_female,name,/Treatments**: Use of antidepressant medications in patients with comorbid depression.,1,4,25.0
+adults_male,category,other,2,3,66.66666666666666
+adults_male,category,ACT,1,3,33.33333333333333
+adults_male,name,rather than identifying specific causes or risk factors.,1,3,33.33333333333333
+adults_male,name,or Treatments Mentioned:**,1,3,33.33333333333333
+adults_male,name,"The study tested the effects of sleep deprivation combined with alcohol (20%) and caffeine (200 mg/kg), both separately and jointly.",1,3,33.33333333333333
+primary_care,category,ACT,1,3,33.33333333333333
+primary_care,category,psychotherapy,1,3,33.33333333333333
+primary_care,category,other,1,3,33.33333333333333
+primary_care,name,/Treatments:** Traditional Chinese medicine (TCM) components Chrysanthemum morifolium (Chr) and its active compounds—Naringenin (Nar) and Apigenin (Api)—were evaluated for their anti-depressant effects.,1,3,33.33333333333333
+primary_care,name,"/treatments**: Cognitive Therapy (CT) for depression, delivered using the same treatment manual and duration.",1,3,33.33333333333333
+primary_care,name,"/Treatments**: The interventions were **duloxetine with Cordyceps militaris (C. militaris)** versus **duloxetine with placebo**, administered for a duration of 6 weeks.",1,3,33.33333333333333
+cancer,category,other,4,3,133.33333333333331
+cancer,name,or Treatments:**,1,3,33.33333333333333
+cancer,name,"related discomfort, and cancer symptoms.",2,3,66.66666666666666
+cancer,name,or Treatments Mentioned:**,1,3,33.33333333333333
+perinatal_male,category,other,3,2,150.0
+perinatal_male,name,/Treatments:** No specific treatments are mentioned,1,2,50.0
+perinatal_male,name,"however, predictive models based on social media markers may serve as early detection tools to support interventions during the prepartum period.",1,2,50.0
+perinatal_male,name,/Treatments**:,1,2,50.0
+female,category,other,9,13,69.23076923076923
+female,category,ACT,3,13,23.076923076923077
+female,category,mindfulness,1,13,7.6923076923076925
+female,name,or treatments:**,1,13,7.6923076923076925
+female,name,or Treatments Mentioned**:,1,13,7.6923076923076925
+female,name,"/Treatments Mentioned:** No specific treatments or interventions are mentioned in the abstract, but the study recommends comprehensive screening for HI and neuropsychiatric comorbidities.",1,13,7.6923076923076925
+female,name,or treatments**: The abstract does not mention specific interventions or treatments for UI or depressive symptoms but highlights the importance of UI management.,1,13,7.6923076923076925
+female,name,**: Mindfulness-based intervention programs.,1,13,7.6923076923076925
+female,name,"/Treatments**: VR erotica was studied as a potential avenue to address sexual difficulties, but no specific therapeutic intervention was implemented in this study.",1,13,7.6923076923076925
+female,name,or Treatments:**,1,13,7.6923076923076925
+female,name,or Treatments**:,1,13,7.6923076923076925
+female,name,"/Treatments:** Regular depression screening and counselling services are recommended, along with raising awareness among students, parents, and medical educators about depression.",1,13,7.6923076923076925
+female,name,or Treatments Mentioned:**,1,13,7.6923076923076925
+female,name,/Treatments**:,1,13,7.6923076923076925
+female,name,"resistant depression, characterized by failure to respond to at least two antidepressants given at therapeutic doses for six weeks each. Depression is noted to be twice as common among women as men.",1,13,7.6923076923076925
+female,name,/Treatments Mentioned:**,1,13,7.6923076923076925
+perinatal,category,other,4,2,200.0
+perinatal,name,"or Treatments:** Gut microbiota-based biomarkers are suggested as potential tools for diagnosis and treatment of PPD patients, though no specific intervention was tested in this study.",2,2,100.0
+perinatal,name,"**: Psychological and psychosocial interventions were studied, including:",2,2,100.0
+adults_school,category,other,3,3,100.0
+adults_school,name,or Treatments:**,1,3,33.33333333333333
+adults_school,name,"/Treatments**: Emphasized the importance of timely and effective interventions for anxiety, depression, and insomnia during isolation.",1,3,33.33333333333333
+adults_school,name,or Treatments Mentioned**:,1,3,33.33333333333333
+older_adults_male,category,other,6,4,150.0
+older_adults_male,name,"**: The intervention is an 8-week web-based synchronous group program using the Somatic Experiencing® method, which focuses on reworking trauma and managing stress.",3,4,75.0
+older_adults_male,name,/Treatments**:,1,4,25.0
+older_adults_male,name,or treatments:**,1,4,25.0
+older_adults_male,name,"or Treatments:** No specific interventions or treatments are mentioned, but screening for lifetime stressors is recommended as a potential step for identifying individuals who could benefit from resilience-building or stress-reduction programs.",1,4,25.0
+children_female,category,ACT,2,3,66.66666666666666
+children_female,category,other,2,3,66.66666666666666
+children_female,name,"or treatments:** While no specific interventions or treatments are described, the abstract suggests targeting maternal anxiety and expressive suppression as critical areas for effective early interventions.",1,3,33.33333333333333
+children_female,name,"/Treatments**: The study highlights ""family hardiness"" as a protective factor and emphasizes considering its trajectory over time",1,3,33.33333333333333
+children_female,name,no specific intervention or treatment is mentioned.,1,3,33.33333333333333
+children_female,name,or Treatments:**,1,3,33.33333333333333
+male_cardiovascular,category,other,4,4,100.0
+male_cardiovascular,name,or Treatments:**,1,4,25.0
+male_cardiovascular,name,"/Treatments**: The Prime Time Sister Circles® (PTSC), a peer-based support program, which included weekly, 2-hour group sessions over 13 weeks focused on topics like stress management, depressive symptoms, anxiety, self-esteem, and physical health education (e.g., hypertension, inflammation, nutrition, etc.).",1,4,25.0
+male_cardiovascular,name,"/Treatments**: The study evaluates the efficacy and safety of acupuncture as a treatment for PSD. The control group receives sham acupuncture, and outcomes are evaluated after 20 sessions over 4 weeks. Antidepressants are mentioned as the conventional first-line treatment but are noted to have reported side effects.",1,4,25.0
+male_cardiovascular,name,"/Treatments**: Diagnostic assessments are highlighted, specifically the use of the Patient Health Questionnaire-9 (PHQ-9) and Hamilton Depression Scale (HDRS) for identifying and evaluating PSD. No direct treatments mentioned.",1,4,25.0
+male_primary_care,category,other,2,3,66.66666666666666
+male_primary_care,category,CBT,1,3,33.33333333333333
+male_primary_care,name,/Treatments**: Psychological coping strategies were studied (emotion-focused and problem-solving strategies). No clinical interventions were mentioned.,1,3,33.33333333333333
+male_primary_care,name,"** The intervention being tested is the internet-based Unified Protocol (iUP), a transdiagnostic cognitive-behavioral therapy (CBT) approach targeting depression, anxiety, and related disorders.",1,3,33.33333333333333
+male_primary_care,name,or Treatments**:,1,3,33.33333333333333
+adolescents_female,category,other,2,2,100.0
+adolescents_female,category,ACT,1,2,50.0
+adolescents_female,name,/Treatments Mentioned:** No specific interventions or treatments are outlined,1,2,50.0
+adolescents_female,name,proactive control skills development emerges as a key protective factor.,1,2,50.0
+adolescents_female,name,or Treatments**:,1,2,50.0

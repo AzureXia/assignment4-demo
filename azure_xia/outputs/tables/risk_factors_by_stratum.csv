@@ -1,0 +1,64 @@
+risk_factors,count,total_studies,percentage,stratum_id
+", Triggers, or Risk Factors**:",4,23,17.391304347826086,male
+", Triggers, or Risk Factors:**",5,23,21.73913043478261,male
+/Triggers/Risk Factors**:,3,23,13.043478260869565,male
+", Triggers, or Risk Factors**:",7,47,14.893617021276595,general_population
+", Triggers, or Risk Factors:**",5,47,10.638297872340425,general_population
+/Triggers/Risk Factors**:,5,47,10.638297872340425,general_population
+", triggers, or risk factors for depression/anxiety**:",2,14,14.285714285714285,adolescents
+/Triggers/Risk Factors**:,4,14,28.57142857142857,adolescents
+", Triggers, or Risk Factors**:",1,9,11.11111111111111,perinatal_female
+/Triggers/Risk Factors for Depression/Anxiety:**,1,9,11.11111111111111,perinatal_female
+"/Triggers/Risk Factors**: Anxiety during pregnancy is a key focus; however, specific causes or triggers are not mentioned.",1,9,11.11111111111111,perinatal_female
+/Triggers/Risk Factors**: Pre-gestational maternal stress (chronic mild stress [CMS] with repeated restraint) is identified as a risk factor for maternal depressive-like behavior during pregnancy and neurodevelopmental changes in offspring.,1,9,11.11111111111111,perinatal_female
+"/Triggers/Risk Factors**: The focus is on perinatal mental health disorders (e.g., depression, anxiety, bipolar disorder), which can negatively affect both mothers and their children if undetected or untreated.",1,9,11.11111111111111,perinatal_female
+"/Triggers/Risk Factors**: The study focuses on anxiety and pain after cesarean delivery. These conditions are highlighted as important to manage for recovery, emotional well-being, mother-infant bonding, and breastfeeding initiation.",1,9,11.11111111111111,perinatal_female
+/Triggers/Risk Factors**: The study focuses on untreated perinatal mood and anxiety disorders (PMADs) as the primary factor causing economic and health-related burdens for mothers and their children.,1,9,11.11111111111111,perinatal_female
+/Triggers/Risk Factors:**,1,9,11.11111111111111,perinatal_female
+and Risk Factors:** Stigma surrounding postpartum depression and lack of awareness are identified as primary barriers to seeking medical treatment.,1,9,11.11111111111111,perinatal_female
+", Triggers, or Risk Factors for Depression/Anxiety:**",1,10,10.0,older_adults
+", Triggers, or Risk Factors**:",1,10,10.0,older_adults
+", Triggers, or Risk Factors:**",2,10,20.0,older_adults
+/Triggers/Risk Factors**:,3,10,30.0,older_adults
+"/Triggers/Risk Factors**: Anxiety is associated with increased depression, increased frailty, and impaired health-related quality of life (HRQOL) (both physical and mental) among older adults with colorectal cancer (CRC).",1,10,10.0,older_adults
+/Triggers/Risk Factors**: Grandparenting roles and the availability of support from adult children (both financial and emotional) are identified as influential factors impacting depression among rural middle-aged and older adults.,1,10,10.0,older_adults
+/Triggers/Risk Factors:** The abstract identifies that anxiety is prevalent among older people and is associated with adverse health outcomes. Specific causes or risk factors like stigma surrounding mental health and polypharmacy concerns are mentioned as barriers to effective treatment.,1,10,10.0,older_adults
+", Triggers, or Risk Factors:**",4,21,19.047619047619047,adults
+/Triggers/Risk Factors**:,5,21,23.809523809523807,adults
+", Triggers, or Risk Factors**",1,3,33.33333333333333,adolescents_school
+", triggers, or risk factors**:",1,3,33.33333333333333,adolescents_school
+"/Triggers/Risk Factors:** Persistent depressive symptoms in Chinese high school students were significantly associated with having siblings, non-intact family status, poor family functioning, and lower levels of positive youth development. Conversely, remission from depressive symptoms was more likely among students whose fathers had higher educational qualifications (bachelor's degree or higher).",1,3,33.33333333333333,adolescents_school
+", Triggers, or Risk Factors**:",1,3,33.33333333333333,cardiovascular
+/Triggers/Risk Factors:**,1,3,33.33333333333333,cardiovascular
+/Triggers/Risk Factors:** The paper focuses on depression in individuals with heart failure (HF) and does not specifically isolate other risk factors for depression beyond the HF diagnosis itself.,1,3,33.33333333333333,cardiovascular
+/Triggers/Risk Factors**:,1,4,25.0,adults_female
+"/Triggers/Risk Factors**: Comorbid depression is a risk factor for worse outcomes in patients with chronic limb-threatening ischemia (CLTI), including higher rates of major amputation and all-cause mortality.",1,4,25.0,adults_female
+/Triggers/Risk Factors:**,1,4,25.0,adults_female
+/Triggers/Risk Factors:** Impaired affective control is identified as a mechanism involved in both the risk and maintenance of depression. Depressed individuals showed slower reaction times on an affective Stroop task compared to never-depressed individuals.,1,4,25.0,adults_female
+", Triggers, or Risk Factors:**",1,3,33.33333333333333,adults_male
+", triggers, or risk factors for depression/anxiety:** Not directly addressed—this study focuses on evaluating a potential treatment rather than identifying specific causes or risk factors.",1,3,33.33333333333333,adults_male
+/Triggers/Risk Factors**:,1,3,33.33333333333333,adults_male
+", triggers, or risk factors**: The abstract does not explicitly discuss causes, triggers, or risk factors for depression. It focuses on outcomes from cognitive therapy and therapist-related differences.",1,3,33.33333333333333,primary_care
+/Triggers/Risk Factors**: Insomnia is identified as both a symptom of depression and an independent risk factor for recurrence.,1,3,33.33333333333333,primary_care
+"/Triggers/Risk Factors:** Depression-like behavior was induced in the study model using corticosterone, simulating the biochemical changes linked to depression.",1,3,33.33333333333333,primary_care
+", Triggers, or Risk Factors for Depression/Anxiety:**",2,3,66.66666666666666,cancer
+", Triggers, or Risk Factors**:",1,3,33.33333333333333,cancer
+", Triggers, or Risk Factors for Depression:**",2,13,15.384615384615385,female
+", Triggers, or Risk Factors**:",3,13,23.076923076923077,female
+", Triggers, or Risk Factors**:",1,3,33.33333333333333,adults_school
+", Triggers, or Risk Factors:**",1,3,33.33333333333333,adults_school
+"/Triggers/Risk Factors**: Quarantine policies increase vulnerability to psychological problems such as anxiety, depression, and insomnia, particularly among college students.",1,3,33.33333333333333,adults_school
+", Triggers, or Risk Factors**: The study focuses on the psychological aftermath of trauma and chronic stress in breast cancer (BC) survivors, which may include anxiety, depression, distress, and struggles with coping strategies and body image.",1,4,25.0,older_adults_male
+", triggers, or risk factors:**",1,4,25.0,older_adults_male
+"/Risk Factors**: Chronic restraint stress (CRS) is identified as the trigger for depression-like behaviors in rats. Microglial activation, mitochondrial dysfunction, and epigenetic repression of genes (SOCS3 and NRF2) mediated by GAS5 and EZH2 are implicated as underlying mechanisms.",1,4,25.0,older_adults_male
+/Triggers/Risk Factors:**,1,4,25.0,older_adults_male
+", triggers, or risk factors:** Maternal anxiety (but not maternal depression) and the use of expressive suppression (an emotion regulation strategy) are identified as risk factors for caregiving helplessness during toddlerhood. Cognitive reappraisal was not found to predict caregiving helplessness. Socio-economic status (SES) indirectly affects caregiving helplessness via expressive suppression.",1,3,33.33333333333333,children_female
+"/Triggers/Risk Factors**: Perceived economic hardship is associated with clinical levels of depression and anxiety in low-income families, affecting both mothers and children. Family hardiness moderates the relationship over time.",1,3,33.33333333333333,children_female
+/Triggers/Risk Factors:**,1,3,33.33333333333333,children_female
+", Triggers, or Risk Factors**: Depression was prevalent among African American women aged 40–75 years with uncontrolled hypertension and low socioeconomic status.",1,4,25.0,male_cardiovascular
+", Triggers, or Risk Factors:**",1,4,25.0,male_cardiovascular
+"/Risk Factors**: Poststroke depression (PSD) is described as the most common mental health complication after stroke, significantly impacting functional outcomes and quality of life. While not elaborated in detail, the risk factor highlighted is the occurrence of stroke itself.",1,4,25.0,male_cardiovascular
+"/Triggers/Risk Factors**: The study does not explicitly discuss causes, triggers, or risk factors for post-stroke depression (PSD). However, PSD is noted to be strongly correlated with poor stroke prognosis.",1,4,25.0,male_cardiovascular
+", Triggers, or Risk Factors**:",1,3,33.33333333333333,male_primary_care
+", Triggers, or Risk Factors:** The abstract mentions depression and anxiety as prevalent and often comorbid emotional disorders in primary care, suggesting their prevalence is a key trigger for public health burden.",1,3,33.33333333333333,male_primary_care
+"/Triggers/Risk Factors for Anxiety**: Anxiety during pregnancy was explored in relation to the threat of Covid-19, but no significantly high Covid-19-specific anxiety was found for either group (ART and spontaneous conception). Women who conceived via ART were not more emotionally vulnerable.",1,3,33.33333333333333,male_primary_care

@@ -1,0 +1,15 @@
+treatment_category,outcome_direction,count,total_studies,percentage,stratum_id
+ACT,improvement,1,7,14.285714285714285,male
+ACT,symptom_reduction,1,7,14.285714285714285,male
+other,improvement,1,7,14.285714285714285,male
+other,symptom_reduction,2,7,28.57142857142857,male
+psychotherapy,symptom_reduction,2,7,28.57142857142857,male
+other,improvement,8,9,88.88888888888889,general_population
+psychotherapy,improvement,1,9,11.11111111111111,general_population
+ACT,symptom_reduction,1,3,33.33333333333333,perinatal_female
+other,improvement,1,3,33.33333333333333,perinatal_female
+other,symptom_reduction,1,3,33.33333333333333,perinatal_female
+psychotherapy,improvement,1,3,33.33333333333333,perinatal_female
+ACT,symptom_reduction,1,3,33.33333333333333,adults
+other,improvement,1,3,33.33333333333333,adults
+other,symptom_reduction,1,3,33.33333333333333,adults

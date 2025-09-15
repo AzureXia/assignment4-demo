@@ -1,0 +1,123 @@
+======================================================================
+📊 POPULATION-STRATUM ANALYSIS EXECUTIVE SUMMARY
+======================================================================
+
+🔍 OVERVIEW:
+   • 30 distinct population groups identified
+   • 328 total studies analyzed
+   • Time period: 2020-2024
+
+👥 LARGEST POPULATION GROUPS:
+   1. general: 68 studies
+   2. male: 41 studies
+   3. adults: 34 studies
+
+⚠️  UNDERREPRESENTED GROUPS:
+   • 21 groups have <10 studies
+   • Need more research on: perinatal + female, perinatal + male, perinatal
+
+============================================================
+📁 WHAT EACH FILE CONTAINS
+============================================================
+
+Original data with GPT fields split into columns
+   File: processed_data.csv
+   Rows: 215, Size: 1173KB
+
+Data exploded by population groups (for analysis)
+   File: normalized_data.csv
+   Rows: 447, Size: 194KB
+
+📊 Overview of each population group
+   File: stratum_summary_by_stratum.csv
+   Rows: 30, Size: 3KB
+
+🎯 What causes problems in each group
+   File: risk_factors_by_stratum.csv
+   Rows: 565, Size: 55KB
+
+🤒 What symptoms appear in each group
+   File: symptoms_by_stratum.csv
+   Rows: 312, Size: 28KB
+
+💊 What treatments are used for each group
+   File: treatments_by_stratum.csv
+   Rows: 121, Size: 5KB
+
+📈 Whether treatments help/harm each group
+   File: outcomes_by_stratum.csv
+   Rows: 69, Size: 2KB
+
+🔗 Which treatments work for which groups
+   File: treatment_outcomes_by_stratum.csv
+   Rows: 141, Size: 7KB
+
+==================================================
+🎯 RISK FACTORS ANALYSIS
+==================================================
+Shows what causes or triggers depression/anxiety in different groups.
+
+📈 MOST COMMONLY CITED RISK FACTORS:
+   • Triggers: mentioned in 125 studies
+   • triggers: mentioned in 49 studies
+   • /Triggers/Risk Factors**:: mentioned in 40 studies
+   • or Risk Factors**:: mentioned in 38 studies
+   • or Risk Factors:**: mentioned in 33 studies
+
+🎯 POPULATION-SPECIFIC PATTERNS:
+   • Male: Triggers... (41.5% of studies)
+   • Female: Triggers... (26.7% of studies)
+   • Adolescents: /Triggers/Risk Factors**:... (26.7% of studies)
+   • Older_Adults: /Triggers/Risk Factors**:... (30.0% of studies)
+
+==================================================
+💊 TREATMENTS ANALYSIS
+==================================================
+Shows what treatments are used for different population groups.
+
+📊 TREATMENT TYPES (% of studies):
+   • Other: 382.4%
+   • Psychotherapy: 107.4%
+   • Behavioral: 22.1%
+   • Pharmacological: 22.1%
+   • Digital: 19.1%
+
+🎯 SPECIFIC INTERVENTIONS:
+   • act: 72 studies
+   • CBT: 14 studies
+   • exercise: 9 studies
+   • cognitive behavioral therapy: 8 studies
+   • Mindfulness: 2 studies
+
+==================================================
+📈 OUTCOMES ANALYSIS
+==================================================
+Shows whether treatments helped, harmed, or had no effect.
+
+📊 OVERALL TREATMENT OUTCOMES:
+   ❓ Unspecified: 74.4% (282 reports)
+   ✅ Benefit: 15.0% (57 reports)
+   ❌ Harm: 7.9% (30 reports)
+   ➖ No Effect: 1.6% (6 reports)
+   ⚖️ Mixed: 1.1% (4 reports)
+
+============================================================
+💡 KEY INSIGHTS & RECOMMENDATIONS
+============================================================
+
+🔬 RESEARCH PRIORITIES:
+   • Increase research on: male|primary_care, community, older_adults|male|school
+   • Well-studied populations: male, general, older_adults
+
+🎯 CLINICAL IMPLICATIONS:
+   • Different populations may need different treatment approaches
+   • Risk factors vary significantly between groups
+   • Treatment effectiveness should be evaluated by population
+
+📊 DATA QUALITY:
+   • Average 10.9 studies per population group
+   • 9 groups have adequate sample sizes
+
+======================================================================
+📧 For questions about this analysis, refer to the README.md
+======================================================================

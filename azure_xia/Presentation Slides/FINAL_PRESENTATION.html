@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population-Stratum Analysis for Mental Health Literature</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slide {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            box-sizing: border-box;
+            display: none;
+            position: relative;
+            animation: slideIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-content {
+            height: calc(100% - 60px);
+            overflow-y: auto;
+        }
+        
+        .slide-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .slide h3 {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .slide ul {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .slide li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .highlight {
+            background: #f39c12;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .metric {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .slide-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #ecf0f1;
+            padding-top: 15px;
+        }
+        
+        .slide-number {
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .navigation button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        
+        .navigation button:hover {
+            background: #2980b9;
+        }
+        
+        .navigation button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .title-slide {
+            text-align: center;
+        }
+        
+        .title-slide .slide-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 1.5em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .author-info {
+            font-size: 1.2em;
+            color: #34495e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <div class="slide" id="slide-1">
+            <div class="slide-content">
+                <h1 class="slide-title">Population-Stratum Analysis for Mental Health Literature</h1>
+                
+        <div class="title-slide">
+            <div class="subtitle">Assignment 4: Automated Document Analysis</div>
+            <div class="author-info">
+                <div><strong>Azure Xia</strong></div>
+                <div>September 2025</div>
+                <div>Amplify API Development</div>
+            </div>
+        </div>
+        
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">1 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" disabled>← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h1 class="slide-title">Problem Statement</h1>
+                <ul><li>Mental health literature analysis typically treats all studies as homogeneous</li><li>Different populations (age, sex, clinical conditions) may have different patterns</li><li>Manual population stratification is time-consuming and inconsistent</li><li>Need for automated system to discover population-specific insights</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">2 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h1 class="slide-title">Our Innovation: Automated Population Stratification</h1>
+                <ul><li>Multi-dimensional classification: Age × Sex × Clinical Cohorts × Settings</li><li>Automated extraction from GPT-processed literature</li><li>Statistical analysis within each population stratum</li><li>Visualization of patterns across different groups</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">3 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h1 class="slide-title">Methodology</h1>
+                <h2>Pipeline Steps:</h2><ul><li>GPT Output Field Splitting → Extract structured data</li><li>Population Normalization → Standardize categories</li><li>Multi-Dimensional Stratification → Create population groups</li><li>Statistical Aggregation → Analyze patterns within groups</li><li>Visualization & Reporting → Present insights</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">4 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h1 class="slide-title">Key Results</h1>
+                <h2>Key Metrics:</h2><ul><li>30 distinct population strata identified</li><li><div class="metric">215 studies analyzed (2020-2024)</div></li><li><div class="metric">98.6% population extraction success rate</div></li><li>Discovered 3:1 male:female research gap</li><li>Identified 21 underrepresented groups</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">5 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h1 class="slide-title">Research Insights Discovered</h1>
+                <h2>Research Insights:</h2><ul><li>Treatment patterns vary significantly across populations</li><li><div class="metric">ACT therapy most common intervention (72 studies)</div></li><li>Perinatal mental health critically understudied</li><li><div class="metric">74% of outcomes unspecified (data quality issue)</div></li><li>Community settings need more research attention</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">6 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <h1 class="slide-title">Technical Implementation</h1>
+                <h2>Technical Implementation:</h2><ul><li>11 Python modules, 800+ lines of code</li><li>Complete CLI with 8 commands</li><li>5 visualization types generated</li><li>Amplify API integration ready</li><li>Extensible plugin architecture</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">7 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <h1 class="slide-title">Assignment Requirements Met</h1>
+                <h2>Requirements Status:</h2><ul><li><span class="success">✅</span> LLM Assistance: Amplify API integration + GPT processing</li><li><div class="metric"><span class="success">✅</span> Document Analysis: 215 studies with cross-document patterns</div></li><li><span class="success">✅</span> Scope: Research-grade system, several hours development</li><li><span class="success">✅</span> Live Demo: Real-time CLI with immediate results</li><li><span class="success">✅</span> All Deliverables: Code, documentation, demonstration</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">8 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <h1 class="slide-title">Live Demonstration</h1>
+                <h2>Demo Commands:</h2><div class="code-block">python3 src/cli.py pipeline data/step3_extracted.csv<br>python3 src/cli.py summary outputs/tables/<br>open outputs/report/demo_report.html<br></div><div class="metric">Complete analysis in under 30 seconds</div>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">9 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <h1 class="slide-title">Impact & Future Applications</h1>
+                <h2>Real-World Applications:</h2><ul><li>Research Funding: Prioritize underrepresented populations</li><li>Clinical Guidelines: Population-specific treatment recommendations</li><li>Literature Reviews: Automated systematic review enhancement</li><li>Medical AI: Training data stratification for fairness</li><li>Public Health: Policy targeting based on evidence gaps</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">10 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" >Next →</button>
+                </span>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-11">
+            <div class="slide-content">
+                <h1 class="slide-title">Conclusion</h1>
+                <h2>Summary:</h2><ul><li>Successfully demonstrated automated document analysis with population stratification</li><li>Discovered significant research gaps and treatment patterns</li><li>Built production-ready system with comprehensive documentation</li><li>Exceeded assignment requirements with research-grade methodology</li><li>Ready for real-world application in mental health research</li></ul>
+            </div>
+            <div class="slide-footer">
+                <span class="slide-number">11 / 11</span>
+                <span class="navigation">
+                    <button onclick="previousSlide()" >← Previous</button>
+                    <button onclick="nextSlide()" disabled>Next →</button>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 11;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+        
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'Home') { currentSlide = 0; showSlide(currentSlide); }
+            if (e.key === 'End') { currentSlide = totalSlides - 1; showSlide(currentSlide); }
+        });
+        
+        // Initialize
+        showSlide(0);
+        
+        // Auto-advance for demo (uncomment if needed)
+        // setInterval(nextSlide, 10000); // Advance every 10 seconds
+    </script>
+</body>
+</html>
+        

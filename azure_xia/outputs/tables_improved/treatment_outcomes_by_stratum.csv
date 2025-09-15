@@ -1,0 +1,5 @@
+treatment_category,outcome_direction,count,stratum_id,total_studies,percentage
+behavioral,benefit,1,general,3,33.33333333333333
+digital,benefit,1,general,3,33.33333333333333
+pharmacological,benefit,2,general,3,66.66666666666666
+pharmacological,harm,1,general,3,33.33333333333333

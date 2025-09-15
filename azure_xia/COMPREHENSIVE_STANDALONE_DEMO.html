@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population-Stratum Analysis - Complete Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65;
+            color: #334155;
+            background: linear-gradient(135deg, #fefefe 0%, #f1f5f9 50%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 30%, #2563eb 70%, #3b82f6 100%);
+            color: #ffffff;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(30,58,138,0.2);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            z-index: 1;
+        }
+        
+        .header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+            font-weight: 400;
+        }
+        
+        .header .meta {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            margin: 2.5rem 0;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(51, 65, 85, 0.1);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            position: relative;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b 0%, #ec4899 25%, #8b5cf6 50%, #06b6d4 75%, #10b981 100%);
+            border-radius: 16px 16px 0 0;
+        }
+        
+        .section h2 {
+            color: #1e293b;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .insights, .warning {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .insights h3, .warning h3 {
+            color: #059669;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .warning h3 {
+            color: #d97706;
+        }
+        
+        .insights ul, .warning ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights li, .warning li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .insights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .warning li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+        }
+        
+        .plot-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            margin: 3rem 0;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(51, 65, 85, 0.12);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            overflow: hidden;
+        }
+        
+        .plot-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        
+        .plot-header h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plot-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .plot-content {
+            padding: 2.5rem;
+        }
+        
+        .plot-placeholder {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #64748b;
+        }
+        
+        .plot-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        
+        .plot-placeholder p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .plot-placeholder .note {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.7;
+        }
+        
+        .interpretation {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(248, 250, 252, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+        
+        .interpretation h4 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .interpretation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .interpretation-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .interpretation-box h5 {
+            color: #475569;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .interpretation-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .interpretation-box li {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+        
+        .interpretation-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #8b5cf6;
+            font-weight: bold;
+        }
+        
+        .key-finding, .clinical-implication, .limitation {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .clinical-implication {
+            border-left-color: #06b6d4;
+            background: rgba(6, 182, 212, 0.05);
+        }
+        
+        .limitation {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.05);
+        }
+        
+        .methodology {
+            margin: 2rem 0;
+        }
+        
+        .methodology h3 {
+            color: #475569;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .methodology p {
+            margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+        
+        .methodology ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        .methodology li {
+            margin: 0.5rem 0;
+        }
+        
+        .coverage-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        .coverage-box h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background: #334155;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .setup-notice {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .setup-notice h3 {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .setup-notice p {
+            color: #475569;
+            font-size: 1.05rem;
+        }
+        
+        .setup-notice code {
+            background: rgba(51, 65, 85, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .section { padding: 1.5rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .interpretation-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Population-Stratum Analysis</h1>
+            <div class="subtitle">Population-Stratum Analysis of Mental Health Literature: Patterns in Treatments, Symptoms, Risk Factors, and Outcomes</div>
+            <div class="meta"><strong>Assignment 4 • Azure Xia • September 2025</strong></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="setup-notice">
+            <h3>📋 Comprehensive Standalone Demo</h3>
+            <p>This version includes all analysis details, interpretations, and methodology from the full interactive demo.</p>
+            <p>No setup required - all content is embedded in this single file for easy sharing.</p>
+        </div>
+
+        <div class="section" id="innovation">
+            <h2>Project Innovation</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                This system revolutionizes mental health literature analysis by automatically discovering 
+                <span style="background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899); background-clip: text; -webkit-background-clip: text; color: transparent; font-weight: 800; font-size: 1.05em;">population stratification patterns</span> that reveal how triggers, 
+                symptoms, and treatments vary across demographic groups and patient cohorts with specific comorbidities. 
+                Our approach goes beyond basic document analysis to uncover hidden research patterns and critical gaps across 
+                age, sex, clinical conditions (cancer, cardiovascular, diabetes), and care settings.
+            </p>
+        </div>
+        
+        <div class="section" id="discoveries">
+            <h2>Key Discoveries</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">51</span>
+                    <div class="stat-label">Hierarchical Population Strata</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">215</span>
+                    <div class="stat-label">Studies Analyzed</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                    <span class="stat-number">30</span>
+                    <div class="stat-label">Understudied Groups</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <span class="stat-number">21</span>
+                    <div class="stat-label">Well-Researched Groups</div>
+                </div>
+            </div>
+            
+            <div class="insights">
+                <h3>Major Research Insights Discovered</h3>
+                <ul>
+                    <li><strong>Hierarchical Classification:</strong> 51 distinct population strata from combinations of age, sex, clinical conditions, and settings</li>
+                    <li><strong>Research Distribution:</strong> General population (47 studies) vs specialized groups (3-23 studies each)</li>
+                    <li><strong>Gender Patterns:</strong> Separate male and female categories plus gender-specific age groups</li>
+                    <li><strong>Life Stage Focus:</strong> Clear distinctions between children, adolescents, adults, older adults, and perinatal populations</li>
+                    <li><strong>Clinical Specialization:</strong> Specific categories for cardiovascular, cancer, and other medical comorbidities</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h3>Research Gaps Identified</h3>
+                <ul>
+                    <li><strong>Perinatal Mental Health:</strong> Only 9 studies in perinatal_female category despite high clinical need</li>
+                    <li><strong>School-Based Interventions:</strong> Only 3 studies in adolescents_school category</li>
+                    <li><strong>Medical Comorbidities:</strong> Cardiovascular (3 studies) and cancer (limited data) need more research</li>
+                    <li><strong>Gender-Specific Approaches:</strong> Male-specific interventions underrepresented in several age groups</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="methodology">
+            <h2>Analysis Methodology</h2>
+            <div class="methodology">
+                <h3>How We Stratify Populations:</h3>
+                <p><strong>Multi-Dimensional Classification:</strong> We stratify studies by 4 key dimensions to create specific population groups:</p>
+                <ul style="margin: 1.5rem 0;">
+                    <li><strong>Demographics:</strong> Age (children, adolescents, adults, older adults) × Sex (male, female, mixed)</li>
+                    <li><strong>Clinical Cohorts:</strong> Patients with specific comorbidities (cancer, cardiovascular disease, diabetes, chronic conditions)</li>
+                    <li><strong>Care Settings:</strong> Where treatment occurs (primary care, hospital, school-based, community)</li>
+                    <li><strong>Population Combinations:</strong> Creates groups like "older_adults_male_cardiovascular" or "adolescents_school"</li>
+                </ul>
+                <p><strong>Why This Matters:</strong> Mental health treatments may work differently for a teenage girl in school vs. an older man with heart disease. Our stratification reveals these population-specific patterns.</p>
+            </div>
+            
+            <div class="methodology">
+                <h3>Five Element-Specific Analyses:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: rgba(6,182,212,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #06b6d4;">
+                        <h4 style="color: #0891b2; margin-bottom: 1rem;">1. Population Coverage</h4>
+                        <p><strong>Analyzes:</strong> All 215 studies to show research distribution</p>
+                        <p><strong>Purpose:</strong> Identify which populations are well-studied vs. understudied</p>
+                    </div>
+                    <div style="background: rgba(239,68,68,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #dc2626; margin-bottom: 1rem;">2. Risk Factors</h4>
+                        <p><strong>Analyzes:</strong> Only studies that actually report specific triggers/risk factors</p>
+                        <p><strong>Purpose:</strong> Reveal population-specific risk patterns (excludes studies with no risk factor data)</p>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981;">
+                        <h4 style="color: #059669; margin-bottom: 1rem;">3. Symptom Patterns</h4>
+                        <p><strong>Analyzes:</strong> Only studies that actually report specific symptoms</p>
+                        <p><strong>Purpose:</strong> Show how symptom presentations vary by population (excludes studies with no symptom data)</p>
+                    </div>
+                    <div style="background: rgba(245,158,11,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                        <h4 style="color: #d97706; margin-bottom: 1rem;">4. Treatment Outcomes</h4>
+                        <p><strong>Analyzes:</strong> Only studies that report BOTH specific treatments AND specific outcomes</p>
+                        <p><strong>Purpose:</strong> Reveal treatment effectiveness patterns (excludes studies missing either element)</p>
+                    </div>
+                    <div style="background: rgba(139,92,246,0.1); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #8b5cf6;">
+                        <h4 style="color: #7c3aed; margin-bottom: 1rem;">5. Treatment Pathways</h4>
+                        <p><strong>Analyzes:</strong> Interactive flow showing population → treatment → outcome connections</p>
+                        <p><strong>Purpose:</strong> Visualize complete treatment journeys and evidence strength</p>
+                    </div>
+                </div>
+                <div class="warning">
+                    <h3>Element-Specific Filtering Approach</h3>
+                    <p><strong>Key Principle:</strong> Each analysis only includes studies that actually report meaningful data for that specific element. For example:</p>
+                    <ul>
+                        <li>A study about triggers (but no outcomes) contributes to risk factor analysis only</li>
+                        <li>A study about treatment outcomes (but no triggers) contributes to treatment analysis only</li>
+                        <li>We exclude "unspecified" entries to focus on meaningful patterns</li>
+                    </ul>
+                    <p>This approach ensures each analysis reflects genuine research findings rather than missing data.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLOT 1: POPULATION COVERAGE -->
+        <div class="plot-section" id="plot1">
+            <div class="plot-header">
+                <h2>Population Groups: Research Coverage Analysis</h2>
+                <p>Understanding Research Distribution Across Demographics</p>
+            </div>
+            <div class="plot-content">
+                <div class="plot-placeholder">
+                    <h3>📊 Population Coverage Heatmap</h3>
+                    <p>Visual representation of research coverage across 51 population strata</p>
+                    <p><strong>Shows:</strong> Study count distribution, identifying well-researched vs. understudied groups</p>
+                </div>
+                
+                <div class="interpretation">
+                    <h4>What This Research Coverage Analysis Reveals</h4>
+                    <p>This analysis shows the distribution of research attention across different population groups, revealing both well-studied areas and critical research gaps in mental health literature.</p>
+                    
+                    <div class="coverage-box" style="background: rgba(6,182,212,0.1); border-left: 4px solid #06b6d4;">
+                        <h4 style="color: #0891b2;">Data Coverage</h4>
+                        <p><strong>Studies With Population Data:</strong> 88 out of 215 total studies (40.9% retention rate)</p>
+                        <p><strong>Element-Specific Filtering:</strong> Only includes studies that report meaningful population demographics</p>
+                        <p><strong>Excluded Studies:</strong> 127 studies excluded because they had "unspecified" population data or missing demographic information</p>
+                        <p><strong>Why This Coverage:</strong> Many studies focus on treatments/outcomes without detailed population characterization - this shows studies with comprehensive demographic data</p>
+                    </div>
+                    
+                    <div class="interpretation-grid">
+                        <div class="interpretation-box">
+                            <h5>Total Records (Right Panel)</h5>
+                            <ul>
+                                <li><strong>General Population:</strong> 47 studies (largest group)</li>
+                                <li><strong>Male-Specific:</strong> 23 studies across age groups</li>
+                                <li><strong>Female-Specific:</strong> 13 studies focused on women</li>
+                                <li><strong>Specialized Groups:</strong> 3-10 studies each for clinical populations</li>
+                            </ul>
+                        </div>
+                        <div class="interpretation-box">
+                            <h5>Research Priorities</h5>
+                            <ul>
+                                <li><strong>Most Studied:</strong> General adult populations receive most research attention</li>
+                                <li><strong>Moderately Studied:</strong> Age-specific and gender-specific groups</li>
+                                <li><strong>Understudied:</strong> Comorbidity-specific populations (cancer, cardiovascular)</li>
+                                <li><strong>Critical Gaps:</strong> School-based and perinatal interventions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <strong>Research Distribution Pattern:</strong> Mental health research shows strong bias toward general adult populations, with specialized clinical groups receiving proportionally less attention despite potentially different treatment needs.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Clinical Translation:</strong> Clinicians treating specialized populations (e.g., perinatal women, cancer patients) may need to extrapolate from general population research, highlighting need for population-specific studies.
+                    </div>
+                    
+                    <div class="limitation">
+                        <strong>Research Gap:</strong> The 2:1 ratio between general population and specialized group studies suggests systematic under-investment in understanding population-specific mental health needs.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLOT 2: RISK FACTORS -->
+        <div class="plot-section" id="plot2">
+            <div class="plot-header">
+                <h2>Risk Factors by Population Groups</h2>
+                <p>Population-Specific Triggers and Risk Patterns</p>
+            </div>
+            <div class="plot-content">
+                <div class="plot-placeholder">
+                    <h3>🎯 Risk Factors Heatmap</h3>
+                    <p>Distribution of documented risk factors across population groups</p>
+                    <p><strong>Shows:</strong> Which populations have well-documented vs. poorly understood risk profiles</p>
+                </div>
+                
+                <div class="interpretation">
+                    <h4>What This Risk Factor Analysis Shows</h4>
+                    <p>This analysis reveals how mental health triggers and risk factors are documented across different population groups, showing both well-characterized and poorly understood risk profiles.</p>
+                    
+                    <div class="coverage-box" style="background: rgba(239,68,68,0.1); border-left: 4px solid #ef4444;">
+                        <h4 style="color: #dc2626;">Data Coverage</h4>
+                        <p><strong>Studies With Risk Factor Data:</strong> 116 out of 215 total studies (54.0% retention rate)</p>
+                        <p><strong>Element-Specific Filtering:</strong> Only includes studies that report specific triggers, causes, or risk factors</p>
+                        <p><strong>Excluded Studies:</strong> 99 studies excluded because they had "unspecified" risk factors or focused purely on treatment/outcomes</p>
+                        <p><strong>Why Good Coverage:</strong> Over half of studies document risk factors, indicating this is a research priority in mental health literature</p>
+                    </div>
+                    
+                    <div class="interpretation-grid">
+                        <div class="interpretation-box">
+                            <h5>Risk Factor Categories</h5>
+                            <ul>
+                                <li><strong>Psychological:</strong> Stress, trauma, cognitive patterns</li>
+                                <li><strong>Social:</strong> Stigma, family dynamics, socioeconomic factors</li>
+                                <li><strong>Biological:</strong> Genetic predisposition, medical comorbidities</li>
+                                <li><strong>Environmental:</strong> Life events, care settings, cultural factors</li>
+                            </ul>
+                        </div>
+                        <div class="interpretation-box">
+                            <h5>Population Differences</h5>
+                            <ul>
+                                <li><strong>Perinatal Women:</strong> Pregnancy-specific stressors, hormonal changes</li>
+                                <li><strong>Adolescents:</strong> School pressure, peer relationships, family conflict</li>
+                                <li><strong>Older Adults:</strong> Health decline, social isolation, bereavement</li>
+                                <li><strong>Medical Patients:</strong> Disease-specific stressors, treatment burden</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <strong>Population-Specific Risk Patterns:</strong> Different demographic groups show distinct risk factor profiles, suggesting need for tailored prevention strategies rather than one-size-fits-all approaches.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Screening Application:</strong> Clinicians can use population-specific risk profiles to develop targeted screening tools and early intervention strategies for different demographic groups.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLOT 3: SYMPTOMS -->
+        <div class="plot-section" id="plot3">
+            <div class="plot-header">
+                <h2>Symptom Categories Across Population Groups</h2>
+                <p>Symptom Reporting Patterns by Demographics</p>
+            </div>
+            <div class="plot-content">
+                <div class="plot-placeholder">
+                    <h3>🧠 Symptom Patterns Heatmap</h3>
+                    <p>How symptom presentations vary across different population groups</p>
+                    <p><strong>Shows:</strong> Population-specific symptom profiles and presentation patterns</p>
+                </div>
+                
+                <div class="interpretation">
+                    <h4>What This Heatmap Reveals</h4>
+                    <p>This heatmap shows how symptom reporting varies across different population groups, with color intensity indicating the percentage of studies in each group that report specific symptoms.</p>
+                    
+                    <div class="coverage-box" style="background: rgba(139,92,246,0.1); border-left: 4px solid #8b5cf6;">
+                        <h4 style="color: #7c3aed;">Data Coverage</h4>
+                        <p><strong>Studies With Symptom Data:</strong> Only 31 out of 215 total studies (14.4% retention rate)</p>
+                        <p><strong>Element-Specific Filtering:</strong> Only includes studies that report meaningful symptom descriptions</p>
+                        <p><strong>Excluded Studies:</strong> 184 studies excluded because they had "unspecified" symptoms, missing symptom data, or unclear symptom descriptions</p>
+                        <p><strong>Why Low Numbers:</strong> Many studies focus on treatments or risk factors without detailed symptom profiling - this shows the subset with comprehensive symptom documentation</p>
+                    </div>
+                    
+                    <div class="interpretation-grid">
+                        <div class="interpretation-box">
+                            <h5>Color Guide</h5>
+                            <ul>
+                                <li><strong>Light Blue/White:</strong> 0-20% of studies report this symptom</li>
+                                <li><strong>Medium Blue:</strong> 20-50% of studies report this symptom</li>
+                                <li><strong>Dark Blue:</strong> 50%+ of studies report this symptom</li>
+                            </ul>
+                        </div>
+                        <div class="interpretation-box">
+                            <h5>Reading the Grid</h5>
+                            <ul>
+                                <li><strong>Rows:</strong> Population groups (male, adolescents, perinatal_female, etc.)</li>
+                                <li><strong>Columns:</strong> Symptom categories from literature</li>
+                                <li><strong>Cell Values:</strong> Percentage of studies reporting that symptom</li>
+                                <li><strong>Patterns:</strong> Reveals population-specific symptom profiles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <strong>Research Insight:</strong> Mental health symptoms may manifest differently across demographics, suggesting need for population-specific diagnostic criteria and assessment tools.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Clinical Application:</strong> Clinicians can use these patterns to focus on population-typical symptoms during assessment and develop targeted screening tools.
+                    </div>
+                    
+                    <div class="limitation">
+                        <strong>Measurement Challenge:</strong> Long, unclear symptom descriptions indicate need for standardized symptom categorization in research studies.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLOT 4: TREATMENT OUTCOMES -->
+        <div class="plot-section" id="plot4">
+            <div class="plot-header">
+                <h2>Treatment Categories vs Outcome Directions</h2>
+                <p>Evidence Base for Treatment Effectiveness</p>
+            </div>
+            <div class="plot-content">
+                <div class="plot-placeholder">
+                    <h3>💊 Treatment Outcomes Matrix</h3>
+                    <p>Relationship between treatment types and their reported outcomes</p>
+                    <p><strong>Shows:</strong> Which treatments are associated with which types of results</p>
+                </div>
+                
+                <div class="interpretation">
+                    <h4>What This Treatment-Outcome Matrix Shows</h4>
+                    <p>This heatmap reveals the relationship between different treatment types and their reported outcomes across all population groups, showing which treatments are associated with which types of results.</p>
+                    
+                    <div class="coverage-box" style="background: rgba(245,158,11,0.1); border-left: 4px solid #f59e0b;">
+                        <h4 style="color: #d97706;">Data Coverage</h4>
+                        <p><strong>Studies With Both Treatment AND Outcome Data:</strong> Only 41 out of 215 total studies (18.1% retention rate)</p>
+                        <p><strong>Element-Specific Filtering:</strong> Only includes studies that report BOTH meaningful treatments AND meaningful outcomes</p>
+                        <p><strong>Excluded Studies:</strong> 174 studies excluded because they either had "unspecified" treatments, "unspecified" outcomes, or missing data for either element</p>
+                        <p><strong>Why Low Numbers:</strong> Most studies focus on either treatment OR outcome measurement, not both - this shows the studies with complete treatment effectiveness data</p>
+                    </div>
+                    
+                    <div class="interpretation-grid">
+                        <div class="interpretation-box">
+                            <h5>Matrix Reading Guide</h5>
+                            <ul>
+                                <li><strong>Rows:</strong> Treatment categories (CBT - Cognitive Behavioral Therapy, ACT - Acceptance and Commitment Therapy, Psychotherapy, etc.)</li>
+                                <li><strong>Columns:</strong> Outcome directions (Improvement, Mixed Results, etc.)</li>
+                                <li><strong>Cell Numbers:</strong> Count of studies reporting that combination</li>
+                                <li><strong>Color Intensity:</strong> Darker = more studies (stronger evidence)</li>
+                            </ul>
+                        </div>
+                        <div class="interpretation-box">
+                            <h5>Evidence-Based Practice</h5>
+                            <ul>
+                                <li><strong>Treatment Selection:</strong> Darker cells show combinations with more research support</li>
+                                <li><strong>Outcome Expectations:</strong> Realistic distribution of results for different interventions</li>
+                                <li><strong>Research Gaps:</strong> Empty cells indicate need for more studies</li>
+                                <li><strong>Comparative Effectiveness:</strong> Which treatments have strongest outcome evidence</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <strong>Evidence Pattern:</strong> Some treatments show consistent outcome patterns across studies, while others have limited or mixed evidence bases.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Practice Implication:</strong> Clinicians can reference this matrix to select treatments with stronger research support for specific outcome goals.
+                    </div>
+                    
+                    <div class="limitation">
+                        <strong>Data Quality Issue:</strong> High proportion of 'unspecified' outcomes suggests original studies often lack clear outcome measurement, limiting treatment effectiveness conclusions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLOT 5: TREATMENT PATHWAYS -->
+        <div class="plot-section" id="plot5">
+            <div class="plot-header">
+                <h2>Mental Health Treatment Pathways</h2>
+                <p>Interactive Flow: Population → Treatment → Outcome</p>
+            </div>
+            <div class="plot-content">
+                <div class="plot-placeholder">
+                    <h3>🔄 Treatment Pathways Flow</h3>
+                    <p>Complete pathway from population groups → treatment types → outcomes</p>
+                    <p><strong>Shows:</strong> How different demographics connect to treatments and their results</p>
+                </div>
+                
+                <div class="interpretation">
+                    <h4>What This Interactive Flow Diagram Shows</h4>
+                    <p>This Sankey diagram traces the complete pathway from population groups → treatment types → outcomes, visualizing how different demographics connect to treatments and their results.</p>
+                    
+                    <div class="coverage-box" style="background: rgba(239,68,68,0.1); border-left: 4px solid #ef4444;">
+                        <h4 style="color: #dc2626;">Data Coverage</h4>
+                        <p><strong>Studies With Complete Pathway Data:</strong> Approximately 41 out of 215 total studies (19.1% retention rate)</p>
+                        <p><strong>Triple-Element Filtering:</strong> Only includes studies that report meaningful population demographics AND treatment types AND outcome measures</p>
+                        <p><strong>Excluded Studies:</strong> 174 studies excluded because they lack complete pathway information (missing population details, unspecified treatments, or unspecified outcomes)</p>
+                        <p><strong>Why Comprehensive:</strong> This represents the studies with the most complete information, showing evidence-based treatment pathways with documented results</p>
+                    </div>
+                    
+                    <div class="interpretation-grid">
+                        <div class="interpretation-box">
+                            <h5>Visual Elements Guide</h5>
+                            <ul>
+                                <li><strong>Blue Nodes:</strong> Population groups (Adults, Adolescents, Perinatal Female)</li>
+                                <li><strong>Green Nodes:</strong> Treatment categories (CBT - Cognitive Behavioral Therapy, ACT - Acceptance and Commitment Therapy, DBT - Dialectical Behavior Therapy, Psychotherapy, Medication, Other - includes mindfulness, exercise therapy, group therapy, counseling)</li>
+                                <li><strong>Orange Nodes:</strong> Outcome categories (Improvement, Mixed Results)</li>
+                                <li><strong>Flow Width:</strong> Thicker flows = more studies = stronger evidence</li>
+                            </ul>
+                        </div>
+                        <div class="interpretation-box">
+                            <h5>How to Interact</h5>
+                            <ul>
+                                <li><strong>Hover:</strong> Mouse over nodes and flows for specific numbers</li>
+                                <li><strong>Trace Paths:</strong> Follow from population → treatment → outcome</li>
+                                <li><strong>Compare Evidence:</strong> Thicker flows indicate more research</li>
+                                <li><strong>Identify Gaps:</strong> Missing connections show research opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="key-finding">
+                        <strong>Pathway Insights:</strong> The diagram reveals which population-treatment-outcome combinations have been studied most, showing both well-established and understudied pathways.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Care Planning:</strong> Clinicians can visualize typical treatment journeys for different populations and identify evidence-based pathways with the strongest research support.
+                    </div>
+                    
+                    <div class="clinical-implication">
+                        <strong>Interpretation Strategy:</strong> Start with a population on the left, follow thick flows to see commonly used treatments, then continue to outcomes. Thicker pathways indicate stronger evidence bases for clinical decision-making.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Analysis Summary</h2>
+            <div class="methodology">
+                <h3>Key Findings:</h3>
+                <ul>
+                    <li><strong>Population Groups:</strong> 51 hierarchical strata identified from 215 studies (2020-2025)</li>
+                    <li><strong>Research Distribution:</strong> 21 well-studied groups (≥3 studies each), 30 understudied groups needing additional research</li>
+                    <li><strong>Treatment Categories:</strong> Five main approaches - psychotherapy, behavioral interventions, digital therapeutics, pharmacological treatments, and other interventions</li>
+                    <li><strong>Data Quality:</strong> Element-specific filtering reveals varying completeness across research dimensions</li>
+                    <li><strong>Processing Capability:</strong> Complete analysis pipeline processes studies in real-time with comprehensive visualization</li>
+                </ul>
+            </div>
+            
+            <div class="methodology">
+                <h3>System Capabilities:</h3>
+                <ul>
+                    <li><strong>Multi-Dimensional Classification:</strong> Age, sex, clinical conditions, and care settings with hierarchical organization</li>
+                    <li><strong>Automated Processing:</strong> Field extraction and population normalization with quality controls</li>
+                    <li><strong>Cross-Document Analysis:</strong> Pattern identification across study collections with statistical aggregation</li>
+                    <li><strong>Visualization Generation:</strong> Automated chart and diagram creation with embedded interpretations</li>
+                    <li><strong>Element-Specific Filtering:</strong> Analysis-specific data inclusion for meaningful pattern discovery</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <h3>Population-Stratum Analysis System</h3>
+            <p><strong>Assignment 4: Automated Document Analysis • Amplify API Course</strong></p>
+            <p><strong>Azure Xia • September 2025</strong></p>
+            <p style="margin-top: 1rem; opacity: 0.8;">
+                Multi-Dimensional Analysis of Mental Health Research: Uncovering Population-Specific Patterns Across 215 Studies
+            </p>
+        </div>
+    </div>
+</body>
+</html>
